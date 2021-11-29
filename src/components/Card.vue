@@ -23,7 +23,7 @@ props:{
     background-color: $primary-color;
     color: white;
     min-height: 300px;
-    width: calc(100% / 5 - 20px);
+    width: 180px;
     margin:5px 10px;
     display: flex;
     flex-direction: column;
