@@ -1,16 +1,43 @@
 <template>
   <main>
-    <Card />
+    <Card 
+    v-for="(card, index) in cards"
+        :key="index"
+        :card="card"
+    />
   </main>
 </template>
 
 <script>
+import axios from 'axios';
 import Card from './Card.vue'
 export default {
   name: 'Main',
   components:{
     Card,
   },
+  data(){
+    return{
+      cards: [],
+      loaded:false,
+      apiUrl: 'https://api.sampleapis.com/rickandmorty/characters'
+    }
+  },
+  methods:{
+    getApi(){
+      axios.get(this.apiUrl)
+        .then( r => {
+          this.cards = r.data;
+          this.loaded = true;
+        })
+        .catch( e => {
+          console.log(e);
+        })
+    }
+  },
+  mounted(){
+    this.getApi();
+  }
 }
 </script>
 

@@ -1,15 +1,18 @@
 <template>
   <div class="mg-card">
-    <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="nome">
-    <p class="title">New Jersey</p>
-    <p class="author">Bon Jovi</p>
-    <p class="year">1988</p>
+    <img :src="card.image" :alt="card.title">
+    <p class="title">{{card.title}}</p>
+    <p class="author">{{card.author}}</p>
+    <p class="year">{{card.year}}</p>
   </div>
 </template>
 
 <script>
 export default {
 name: 'Card',
+props:{
+    card: Object
+  }
 }
 </script>
 
