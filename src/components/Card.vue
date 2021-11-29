@@ -25,6 +25,7 @@ name: 'Card',
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
     img{
       width: 80%;
       margin: 10px auto;
