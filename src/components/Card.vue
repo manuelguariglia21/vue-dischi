@@ -4,6 +4,7 @@
     <p class="title text-center">{{card.title}}</p>
     <p class="author text-center">{{card.author}}</p>
     <p class="year text-center">{{card.year}}</p>
+    
   </div>
 </template>
 

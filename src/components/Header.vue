@@ -2,29 +2,26 @@
   <section>
     <header class="d-flex justify-content-between">
       <img src="../assets/img/logo.png" alt="Spotify Web">
-      <SearchBar @sendSearch="performSearch"/>
+      <select v-model="textToSearch" @change="$emit('sendSearch',textToSearch)" class="form-select form-select-lg mb-3 w-25" aria-label=".form-select-lg example">
+        <option value="all" selected>Tutti i generi</option>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="metal">Metal</option>
+        <option value="jazz">Jazz</option>
+      </select>
     </header>
   </section>
 </template>
 
 <script>
-import SearchBar from './SearchBar.vue'
 export default {
   name: 'Header',
-  components:{
-    SearchBar,
-  },
   data(){
     return{
-      textToSearch:''
+      textToSearch:'',
     }
   },
-  methods:{
-    performSearch(text){
-      this.textToSearch = text;
-      console.log(this.textToSearch);
-    },
-  },
+  
 }
 </script>
 
@@ -38,6 +35,9 @@ header{
   background-color: $primary-color;
   img{
     width: 50px;
+    height: 50px;
+  }
+  select{
     height: 50px;
   }
 }
