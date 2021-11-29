@@ -1,9 +1,9 @@
 <template>
   <div class="mg-card">
-    <img :src="card.image" :alt="card.title">
-    <p class="title">{{card.title}}</p>
-    <p class="author">{{card.author}}</p>
-    <p class="year">{{card.year}}</p>
+    <img :src="card.poster" :alt="card.title">
+    <p class="title text-center">{{card.title}}</p>
+    <p class="author text-center">{{card.author}}</p>
+    <p class="year text-center">{{card.year}}</p>
   </div>
 </template>
 

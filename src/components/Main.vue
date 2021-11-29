@@ -20,14 +20,14 @@ export default {
     return{
       cards: [],
       loaded:false,
-      apiUrl: 'https://api.sampleapis.com/rickandmorty/characters'
+      apiUrl: 'https://flynn.boolean.careers/exercises/api/array/music'
     }
   },
   methods:{
     getApi(){
       axios.get(this.apiUrl)
         .then( r => {
-          this.cards = r.data;
+          this.cards = r.data.response;
           this.loaded = true;
         })
         .catch( e => {
